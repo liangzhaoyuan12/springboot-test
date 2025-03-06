@@ -1,0 +1,32 @@
+spring:
+  thymeleaf:
+    prefix: classpath:/templates/
+    check-template-location: true
+    cache: true
+    suffix: .html
+    encoding: UTF-8
+    mode: HTML
+  datasource:
+    url: jdbc:mysql://localhost:3306/liangzhaoyuan12?serverTimezone=UTC
+    username: root
+    password: 13760903338
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    hikari: # 开启数据库连接池，spring-boot-starter-data-jpa中包含该依赖
+      maximum-pool-size: 20
+      minimum-idle: 5
+      idle-timeout: 30000
+      max-lifetime: 1800000
+      connection-timeout: 30000
+      pool-name: HikariPool
+  jpa:
+    hibernate:
+      ddl-auto: update # 根据需要调整
+    show-sql: true
+logging:
+  config: classpath:log/logback.xml
+#  level:
+#    com.zaxxer.hikari: debug
+server:
+  port: 8080
+  servlet:
+    context-path: /

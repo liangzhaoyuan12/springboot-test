@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      >
+<head>
+    <meta charset="UTF-8">
+    <title>Thymeleaf</title>
+</head>
+<body>
+这是一个测试Thymeleaf跳转页面的测试
+<table>
+    姓名:<span th:text="${user.username}"></span>
+    年龄:<span th:text="${user.age}"></span>
+</table>
+<ul th:each="user:${usersList}">
+    <li th:text="${user.username}"></li>
+    <li th:text="${user.age}"></li>
+</ul>
+<span th:if="${user.age>17}">成年</span>
+<span th:if="${user.age<17}">未成年</span>
+</body>
+</html>
